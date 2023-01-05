@@ -75,6 +75,7 @@ public class DetailsFragment extends Fragment {
         artDatabase = Room.databaseBuilder(requireContext(), ArtDatabase.class, "Arts").build();
         artDao = artDatabase.artDao();
 
+
     }
 
     @Override
@@ -105,6 +106,8 @@ public class DetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         database = requireActivity().openOrCreateDatabase("Arts", Context.MODE_PRIVATE, null);
+
+        binding.btnSave.setEnabled(false);
 
         if (getArguments() != null){
             info = DetailsFragmentArgs.fromBundle(getArguments()).getInfo();
@@ -233,6 +236,7 @@ public class DetailsFragment extends Fragment {
                     Intent intentFromResult = result.getData();
                     if (intentFromResult != null){
                         Uri imageData = intentFromResult.getData();
+                        binding.btnSave.setEnabled(true);
                         try {
 
                             ImageDecoder.Source source = ImageDecoder.createSource(requireActivity().getContentResolver(), imageData);
