@@ -23,6 +23,7 @@ import com.ozzyozdil.artbooknavigation.roomdb.ArtDao;
 import com.ozzyozdil.artbooknavigation.roomdb.ArtDatabase;
 
 import java.util.List;
+import java.util.Objects;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -80,6 +81,11 @@ public class FirstFragment extends Fragment {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         artAdapter = new ArtAdapter(artList);
         binding.recyclerView.setAdapter(artAdapter);
+
+        // txt_Description (açıklama) yalnızca FirstFragment boş olursa gözükecek
+        if (Objects.requireNonNull(binding.recyclerView.getAdapter()).getItemCount() != 0){
+            binding.txtDescription.setVisibility(View.GONE);
+        }
     }
 
     @Override
