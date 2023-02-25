@@ -51,7 +51,7 @@ public class ArtAdapter extends RecyclerView.Adapter<ArtAdapter.ArtHolder> {
     @Override
     public void onBindViewHolder(@NonNull ArtHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        holder.binding.textView.setText(artList.get(position).getArtname());
+        holder.binding.textView.setText(artList.get(position).getArtName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -144,7 +144,7 @@ public class DetailsFragment extends Fragment {
             binding.btnSave.setVisibility(View.VISIBLE);
             binding.btnDelete.setVisibility(View.GONE);
 
-            binding.imageView.setImageResource(R.drawable.selectedimage);
+            binding.imageView.setImageResource(R.drawable.selectimage);
 
         } else {
             int artId = DetailsFragmentArgs.fromBundle(getArguments()).getArtId();
@@ -161,7 +161,7 @@ public class DetailsFragment extends Fragment {
     private void handleResponseWithOldArt(Art art){
 
         artFromMain = art;
-        binding.etxtArt.setText(art.artname);
+        binding.etxtArt.setText(art.artName);
         binding.etxtArtist.setText(art.artistName);
         binding.etxtYear.setText(art.year);
 

@@ -12,7 +12,7 @@ public class Art {
     public int id;
 
     @ColumnInfo(name = "name")
-    public String artname;
+    public String artName;
 
     @Nullable
     @ColumnInfo(name = "artistname")
@@ -27,8 +27,8 @@ public class Art {
     public byte[] image;
 
     // Constructor
-    public Art(String artname, @Nullable String artistName, @Nullable String year, @Nullable byte[] image) {
-        this.artname = artname;
+    public Art(String artName, @Nullable String artistName, @Nullable String year, @Nullable byte[] image) {
+        this.artName = artName;
         this.artistName = artistName;
         this.year = year;
         this.image = image;
@@ -42,12 +42,12 @@ public class Art {
         this.id = id;
     }
 
-    public String getArtname() {
-        return artname;
+    public String getArtName() {
+        return artName;
     }
 
-    public void setArtname(String artname) {
-        this.artname = artname;
+    public void setArtName(String artName) {
+        this.artName = artName;
     }
 
     @Nullable

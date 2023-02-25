@@ -10,7 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="@drawable/itembg"
+        android:fontFamily="@font/itim"
+        android:gravity="center_vertical"
+        android:paddingStart="50dp"
+        android:paddingBottom="8dp"
         android:text="Test"
-        android:textColor="#CACACA"
-        android:textSize="22sp" />
+        android:textColor="#FFD8D8"
+        android:textSize="34sp" />
 </LinearLayout>
